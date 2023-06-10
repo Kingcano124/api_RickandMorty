@@ -1,0 +1,33 @@
+<div class="container">
+
+    <div>
+        <button class="btn btn-primary" (click)="newGame()">New Game</button>
+
+    </div>
+    <ng-container *ngIf="valor">
+        <div class=" d-flex justify-content-center mb-5 mt-4" >
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    <h5 class="card-title text-center">{{misteryCharacters[indice].name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-center" >{{misteryCharacters[indice].species}}</h6>
+                </div>
+                <div class="card-body">
+                    <img src={{misteryCharacters[indice].image}} class="card-img-top" alt="...">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <div  class=" d-flex justify-content-around flex-wrap">
+        <div class="card mb-4" style="width: 18rem;" *ngFor="let characters of misteryCharacters">
+            <div class="card-header">
+                <h5 class="card-title text-center">{{characters.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted text-center">{{characters.species}}</h6>
+              </div>
+            <div class="card-body">
+                <img src={{characters.image}} class="card-img-top" alt="...">
+            </div>
+        </div>
+    </div>
+    
+</div>
+
